@@ -7,7 +7,7 @@ class RandomFiringNeuron():
     self.gradient_proportions = gradient_proportions
 
   def forward(self, x):
-    threshhold = np.random.randn(x.shape[0]) * self.proportions[0]
+    threshhold = np.random.randn(*x.shape) * self.proportions[0]
     self.activation = np.where(x <= threshhold, False, True)
     y = np.empty_like(x)
 
